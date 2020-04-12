@@ -13,19 +13,24 @@
 </p>
 
 //Example
-function Person(name, job, yearOfBirth){    
+function Person(name, job, yearOfBirth){   
     this.name= name; 
     this.job= job; 
     this.yearOfBirth= yearOfBirth; 
 } 
-Person.prototype.calculateAge= function(){ 
-    console.log('The current age is: '+(2019- this.yearOfBirth)); 
+// adding calculateAge() method to the Prototype property 
+Person.prototype.calculateAge= function(){  
+    console.log('The current age is: '+(2020- this.yearOfBirth)); 
 } 
 console.log(Person.prototype); 
+  
+// creating Object Person1 
+let Person1= new Person('Deepak', 'Web Developer', 1994);  
+console.log(Person1);
+Person1.calculateAge(); 
 
 /*Output
 {calculateAge:f,constructor:f}
-calculateAge:f()
-constructor:f Person(name,job,yearOfBirth)
-_proto_:Object
+Person{name:"Deepak",job:"Web Developer",yearOfBirth:1994}
+The current age is: 26
 */
